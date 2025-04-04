@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>MTSoftware</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Tahoma, Verdana, sans-serif;
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to bottom, #4b6cb7, #182848);
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    nav {
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      background: linear-gradient(to bottom, #ffffff, #d4d4d4);
+      color: #333;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+      box-shadow: inset 0 1px 0 #fff, 0 2px 5px rgba(0,0,0,0.3);
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: linear-gradient(to bottom, #f0f0f0, #c0c0c0);
+    }
+
+    .tab-content {
+      display: none;
+      background: white;
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h1 {
+      color: #204080;
+      text-shadow: 1px 1px 0 #fff;
+    }
+
+    .program-logo {
+      max-width: 150px;
+      float: right;
+      margin-left: 20px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: linear-gradient(to bottom, #4CAF50, #388E3C);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .download-button:hover {
+      background: linear-gradient(to bottom, #66BB6A, #43A047);
+    }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a onclick="showTab('home')">Strona główna</a>
+      <a onclick="showTab('about')">O nas</a>
+      <a onclick="showTab('downloader')">MTDownloader</a>
+      <a onclick="showTab('math')">MTMath</a>
+      <a onclick="showTab('contact')">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="tab-content active">
+      <h1>Strona główna</h1>
+      <p>Witaj na oficjalnej witrynie MTSoftware! 😎</p>
+
+      <h2>🗒️ Dziennik zmian</h2>
+
+      <div style="border: 1px solid #aaa; padding: 15px; margin-top: 20px; background-color: #f5f5f5;">
+        <h3 style="color: #204080; margin-bottom: 5px;">📦 Wersja 1.0.0 – 04.04.2025</h3>
+        <ul>
+          <li>Pierwsze wydanie oficjalnej strony MTSoftware.</li>
+          <li>Witajcie!</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="tab-content">
+      <h1>O nas</h1>
+      <p>Tworzymy oprogramowanie od roku 2019, a organizacja powstała w 2024 roku. Stworzyliśmy parę programów m.in MTDownloader.</p>
+    </section>
+
+    <section id="downloader" class="tab-content">
+      <h1>MTDownloader</h1>
+      <div class="clearfix">
+        <img src="MTD.jpg" alt="MTDownloader Logo" class="program-logo">
+        <p>MTDownloader to nasz prosty program opraty na YT-DLP, umożliwia pobieranie filmów, muzyki oraz witryn internetowych. Wymagany wget, zainstaluj za pomocą "winget install wget" w CMD!</p>
+        <a class="download-button" href="https://github.com/MTSoftwareTeam/MTDownloader/releases" target="_blank">📥 Pobierz MTDownloader</a>
+      </div>
+    </section>
+
+    <section id="math" class="tab-content">
+      <h1>MTMath</h1>
+      <div class="clearfix">
+        <img src="https://via.placeholder.com/150x150.png?text=MTMath" alt="MTMath Logo" class="program-logo">
+        <p>MTMath comming soon</p>
+        <a class="download-button" href="index.html" target="_blank">📥 Pobierz MTMath</a>
+      </div>
+    </section>
+
+    <section id="contact" class="tab-content">
+      <h1>Kontakt</h1>
+      <p>Napisz do nas: <a href="mailto:zixmichal@gmail.com">zixmichal@gmail.com</a> lub odwiedź nasz profil na <a href="https://github.com/MTSoftwareTeam" target="_blank">GitHub</a> 😄</p>
+    </section>
+  </main>
+
+  <script>
+    function showTab(id) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
